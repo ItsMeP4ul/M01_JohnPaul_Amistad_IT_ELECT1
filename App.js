@@ -1,10 +1,22 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
+import React, { useState } from 'react';
+import CounterApp from './CounterApp';
+import ColorChangerApp from './ColorChangerApp';
+import CommentSection from './CommentSection';
+import ChatBubble from './ChatBubble';
+
 
 export default function App() {
+  const [bgColor, setBgColor] = useState('white');
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
+    <View style={[styles.container, { backgroundColor: bgColor }]}>
+      <CounterApp/>
+      <ColorChangerApp/>
+      <CommentSection/>
+      <
+      
       <StatusBar style="auto" />
     </View>
   );
@@ -13,8 +25,8 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
+    padding: 10,
   },
 });
